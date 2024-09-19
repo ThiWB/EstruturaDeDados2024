@@ -12,7 +12,7 @@ senhas.Push(548);
 senhas.Push(178);
 senhas.Push(489);
 senhas.Push(925);
-senhas.Push(0);
+senhas.Push(0); // Não será distribuída
 
 senhas.Pop();
 
@@ -23,19 +23,19 @@ int tempoRestante = 0;
 // Loop While para manter o jogo em execução
 while (true)
 {
-    // Condição para iniciar o jogo (ENTER) ou sair (qualquer tecla)
+    // Condição para iniciar a distribuição de Senhas (ENTER) ou sair (qualquer tecla)
     if (tempoRestante <= 0)
     {
         Console.WriteLine("Pressione a tecla [*ENTER*] para começar o jogo\n\n");
         Console.WriteLine("Pressione qualquer outra tecla para sair...");
 
-        // Se a tecla apertada não for ENTER, o jogo é encerrado
+        // Se a tecla apertada não for ENTER, a distribuição de senhas é interrompida	
         if (Console.ReadKey().Key != ConsoleKey.Enter)
         {
             return;
         }
 
-        // Se o ENTER tiver sido apertado inicia o jogo
+        // Se o ENTER tiver sido apertado inicia a distribuição
         foreach(object obj in senhas)
         {
             Console.WriteLine(obj);
@@ -43,9 +43,9 @@ while (true)
 
         if (senhas.Count > 0)
         {
-            // Pop the top element and print it
+            // Faz um Pop no elemento do topo da pilha
             int poppedElement = senhas.Pop();
-            Console.WriteLine("Popped element: " + poppedElement);
+            Console.WriteLine("A sua Senha é: " + poppedElement);
         }
 
         

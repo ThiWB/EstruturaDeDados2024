@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Filas
 {
     public class CallCenter
     {
         private int _counter = 0;
-        public Queue<IncomingCall> ? Calls { get; set; }
+        public Queue<IncomingCall> Calls { get; set; }
         
         public CallCenter()
         {
@@ -18,10 +16,10 @@ namespace Filas
         // Método para abertura de chamados
         public void Call(int clientId)
         {
-            incomingCall call = new IncomingCall()
+            IncomingCall call = new IncomingCall()
             {
                 id = ++_counter,
-                clientId = clientId,
+                ClientId = clientId,
                 CallTime = DateTime.Now
             };
 
@@ -31,10 +29,10 @@ namespace Filas
         public IncomingCall Answer(string consultant)
         {
             // Validação: verificar se tem atendimentos na Fila
-            if(Calls!.count > 0)
+            if(Calls.Count > 0)
             {
-                IncomingCall call = new Calls.Dequeue();
-                call.consultant = consultant;
+                IncomingCall call = Calls.Dequeue();
+                call.Consultant = consultant;
                 call.StartTime = DateTime.Now;
 
                 return call;
@@ -50,7 +48,7 @@ namespace Filas
 
         public bool AreWaitingCalls()
         {
-            return (Calls!.count > 0);
+            return (Calls.Count > 0);
         }
 
 

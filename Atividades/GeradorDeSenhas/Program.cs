@@ -26,7 +26,7 @@ while (true)
     // Condição para iniciar a distribuição de Senhas (ENTER) ou sair (qualquer tecla)
     if (tempoRestante <= 0)
     {
-        Console.WriteLine("Pressione a tecla [*ENTER*] para começar o jogo\n\n");
+        Console.WriteLine("Pressione a tecla [*ENTER*] para gerar uma Senha\n\n");
         Console.WriteLine("Pressione qualquer outra tecla para sair...");
 
         // Se a tecla apertada não for ENTER, a distribuição de senhas é interrompida	
